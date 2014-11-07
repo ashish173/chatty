@@ -1,0 +1,7 @@
+
+<%= link_to "<= Back to Home", root_path %><br>
+<h3>List of Users</h3>
+
+<% @users.each do |user| %>
+  <li><b>  <%= user.email %></b>&nbsp;&nbsp; <%= link_to "Add Friend", add_friend_friendship_path(user.id), method: :post %> </li>
+<% end %>

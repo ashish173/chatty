@@ -1,5 +1,6 @@
 class DashboardController < ApplicationController
   def index
-    puts "===>>>>>> In dashboard controller"
+    @users = User.all
+    return nil
   end
 end
