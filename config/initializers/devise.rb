@@ -22,7 +22,7 @@ Devise.setup do |config|
   require 'devise/orm/active_record'
 
   # Oniauth facebook key and secret
-  config.omniauth :facebook, "1495080054091597", "e1a3048f8db1c0a04fa8a7a3a3f9417d"
+  config.omniauth :facebook, "1495080054091597", "e1a3048f8db1c0a04fa8a7a3a3f9417d", :scope => 'user_friends,user_activities,read_stream,user_likes'
 
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is

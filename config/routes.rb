@@ -1,6 +1,12 @@
 Cleanfb::Application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   
+  resources :users, param: :id do
+    member do
+      get :fetch_friends
+    end
+  end
+
   resources :dashboard
   resources :friendships do
     member do
@@ -8,7 +14,10 @@ Cleanfb::Application.routes.draw do
     end
   end
 
-  
+  resources :conversations do
+    resources :messages
+  end
+
   resources :users
   root 'dashboard#index'
   # The priority is based upon order of creation: first created -> highest priority.

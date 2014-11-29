@@ -1,3 +1,8 @@
 <h2>Landing page</h2>
-<%= link_to "Users", users_path %>
 
+<% if current_user.present? %>
+  <%= link_to "Users", users_path %><br>
+  <%= link_to "Fetch friends", fetch_friends_user_path(current_user.id) %>
+<% else %>
+  <%= link_to "Login to view your friends", new_user_session_path%>
+<% end %>

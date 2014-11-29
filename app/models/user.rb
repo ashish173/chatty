@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   devise :omniauthable, :omniauth_providers => [:facebook]
+  
+  has_many :conversations, :foreign_key => :sender_id
 
   # Finds/Creates user which is logging in in the database from fb.
   def self.from_omniauth(auth)
@@ -17,7 +19,7 @@ class User < ActiveRecord::Base
       user.provider = auth.provider
       user.uid = auth.uid
       user.password = Devise.friendly_token[0,20]
-      user.name = auth.info.name   
+      user.name = auth.info.name
       user.picture = auth.info.image 
       user.oauth_token = auth.credentials.token
       user.oauth_expires_at = Time.at(auth.credentials.expires_at)

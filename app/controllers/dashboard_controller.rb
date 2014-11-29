@@ -3,4 +3,8 @@ class DashboardController < ApplicationController
     @users = User.all
     return nil
   end
+
+  def fetch_friends
+    render :index     
+  end
 end

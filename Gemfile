@@ -8,7 +8,10 @@ gem 'sqlite3'
 
 # Omniauth for facebook
 gem 'omniauth-facebook'
-
+gem 'koala', '~> 1.10.0rc'  # latest release
+gem 'private_pub'
+gem 'thin'
+gem 'interactive_editor'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 

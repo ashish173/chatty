@@ -1,0 +1,7 @@
+<%= link_to "<= Back to Home", root_path %><br>
+<p>Showing the list of users </p>
+<% @friends.each do |user| %>
+  <li><b> <%= user.name %> </b>
+<% end %>
+
+
