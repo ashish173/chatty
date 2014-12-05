@@ -5,6 +5,11 @@ module MessagesHelper
   end
 
   def message_interlocutor(message)
-    message.user == message.conversation.sender ? message.conversation.sender : message.conversation.recipient
+    conversation_id = message.conversation_id
+    conversation = MessagingService::Message.
+                      get_conversation(
+                        conversation_id: conversation_id).conversation
+    recipient_id = message.user_id == conversation.sender_id ? conversation.sender_id : conversation.recipient_id
+    User.find(recipient_id)
   end
 end

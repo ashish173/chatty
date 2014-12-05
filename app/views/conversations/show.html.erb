@@ -13,13 +13,15 @@
 </div>
 <div class="chatboxcontent">
   <% if @messages.any? %>
-    <%= render @messages %>
+    <%= render "/messages/message", collection: @messages %>
   <% end %>
 </div>
+
+<%#= binding.pry %>
 <div class="chatboxinput">
-  <%= form_for([@conversation, @message], :remote => true, :html => {id: "conversation_form_#{@conversation.id}"}) do |f| %>
+  <%= form_for(@message, :url => conversation_messages_path(@conversation.id) ,:remote => true, :html => {id: "conversation_form_#{@conversation.id}"}) do |f| %>
     <%= f.text_area :body, class: "chatboxtextarea", "data-cid" => @conversation.id %>
   <% end %>
 </div>
- 
-<%= subscribe_to conversation_path(@conversation) %> 
+<!-- TODO faye subscribe hook not working at present find sollution -->
+<%#= subscribe_to conversation_path(@conversation) %> 

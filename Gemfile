@@ -15,6 +15,7 @@ gem 'interactive_editor'
 gem 'messaging_service', '0.0.1', :path => 'vendor/gems/messaging_service'
 gem 'rollbar', '~> 1.2.13'   # for logging purpose
 gem 'excon', '0.39.5'
+gem 'pry'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 
