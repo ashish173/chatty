@@ -14,4 +14,7 @@ This [main app](https://github.com/ashish173/chatty) uses a gem to interact with
 
 It can be found in the `vendor/gems` directory link to [interface_gem](https://github.com/ashish173/messaging_service_gem).
 
+I have not removed the code completely while migrating main monolith to microservices architecture.
+Commented code is monolith code.
+
 ENjoii.. :fire:
