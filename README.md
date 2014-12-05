@@ -4,4 +4,4 @@ Chatty is a chatting application where you can chat just like you would on any o
 
 But that's not important here!
 
-It does that using a microservice!!!
+It does that using a microservice :bangbang:
