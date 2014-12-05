@@ -1,4 +1,4 @@
-<%= @messages.each do |message| %>
+<% @messages.each do |message| %>
   <li class="<%= self_or_other(message) %>">
   <div class="chatboxmessagecontent">
     <p><%= message.body %></p>
